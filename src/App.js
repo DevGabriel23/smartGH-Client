@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Home from './pages/Home';
+import History from './pages/History';
+import LandingPage from './pages/LandingPage';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import NotFound from './pages/NotFound';
+import PrivateRoute from './components/PrivateRoute';
+// import Nav from './components/nav';
 
-function App() {
+function App (){
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    {/* <Nav/> */}
+      <Routes>
+        <Route exat path="/" element={<LandingPage/>}/>
+        <Route exat path="/login" element={<Login/>}/>
+        <Route exat path="/register" element={<Register/>}/>
+        <Route exact path="/home" element={<PrivateRoute component={Home} />}/>
+        <Route exact path="/home/history" element={<PrivateRoute component={History} />}/>  
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
