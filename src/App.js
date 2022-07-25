@@ -23,6 +23,7 @@ function App() {
           <Route exat path="/register" element={<Register />} />
           <Route exact path="/home" element={<PrivateRoute component={Home} />} />
           <Route exact path="/home/history" element={<PrivateRoute component={History} />} />
+          <Route exact path="/home/stats" element={<PrivateRoute component={Stats} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
