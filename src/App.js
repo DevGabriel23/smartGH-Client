@@ -8,22 +8,26 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import PrivateRoute from './components/PrivateRoute';
-// import Nav from './components/nav';
+import Nav from './components/nav';
+import Navbar from './components/nav';
 
-function App (){
+function App() {
 
   return (
-    <BrowserRouter>
-    {/* <Nav/> */}
-      <Routes>
-        <Route exat path="/" element={<LandingPage/>}/>
-        <Route exat path="/login" element={<Login/>}/>
-        <Route exat path="/register" element={<Register/>}/>
-        <Route exact path="/home" element={<PrivateRoute component={Home} />}/>
-        <Route exact path="/home/history" element={<PrivateRoute component={History} />}/>  
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Navbar></Navbar>
+        <Routes>
+          <Route exat path="/" element={<LandingPage />} />
+          <Route exat path="/login" element={<Login />} />
+          <Route exat path="/register" element={<Register />} />
+          <Route exact path="/home" element={<PrivateRoute component={Home} />} />
+          <Route exact path="/home/history" element={<PrivateRoute component={History} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+      
+    </div>
   );
 }
 
