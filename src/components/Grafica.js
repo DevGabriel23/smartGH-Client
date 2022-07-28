@@ -1,3 +1,4 @@
+import React from 'react'
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS} from "chart.js/auto";
   export const Grafica=({datos,numD})=>{
@@ -23,8 +24,8 @@ import { Chart as ChartJS} from "chart.js/auto";
     responsive: true
   }
     return(
-        <div className={style.container}>
-          <div className={style.card}>
+        <div>
+          <div>
         <Bar data={data} options={opciones}/>
         </div>
         </div>

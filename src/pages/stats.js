@@ -1,9 +1,9 @@
+import React from 'react'
 import { getDatos } from "../components/services";
 import { useEffect, useState } from "react"
 import { Grafica } from "../components/Grafica";
 
-
-export function Estadistica() {
+export default function Stats() {
     const [datos, setDatos] = useState([]);
     const [Rango, setRango] = useState(0);
     const [Amplitud, setAmplitud] = useState(0);
@@ -141,16 +141,15 @@ export function Estadistica() {
         return arr;
     }
     return (
-        <div className={style.container}>
-            <Nav />
-            <div className={style.card}>
-                <div className="table-responsive">
-                    <table className="table table-striped">
-                        <thead className='thead-dark'>
-                            <tr className='table-primary'>
-                                <th colSpan="9"><p className="text-center">Tabla de distribución de frecuencias</p></th>
+        <div>
+            <div >
+                <div >
+                    <table >
+                        <thead >
+                            <tr >
+                                <th colSpan="9"><p >Tabla de distribución de frecuencias</p></th>
                             </tr>
-                            <tr className='table-primary text-center '>
+                            <tr>
                                 <th>Clases</th>
                                 <th>Lim inf</th>
                                 <th>Lim sup</th>
@@ -164,7 +163,7 @@ export function Estadistica() {
                         </thead>
                         <tbody>
                             {limInf.map((data, i) => (
-                                <tr key={i} className={style.all}>
+                                <tr key={i}>
                                     <th>{String.fromCharCode(97 + i).toUpperCase()}</th>
                                     <td>{limInf[i]}</td>
                                     <td>{limSup[i]}</td>
@@ -179,7 +178,7 @@ export function Estadistica() {
                         </tbody>
                     </table>
                 </div>
-                <div className={style.titulo}>
+                <div>
                     <h3>
                         Datos ordenaddos
                     </h3>

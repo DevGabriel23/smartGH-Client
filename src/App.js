@@ -8,15 +8,15 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import PrivateRoute from './components/PrivateRoute';
-import Nav from './components/nav';
-import Navbar from './components/nav';
+import Navbar from './components/Nav';
+import Stats from './pages/Stats';
 
 function App() {
 
   return (
     <div>
       <BrowserRouter>
-        <Navbar></Navbar>
+      <Navbar/>
         <Routes>
           <Route exat path="/" element={<LandingPage />} />
           <Route exat path="/login" element={<Login />} />

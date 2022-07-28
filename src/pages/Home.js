@@ -7,13 +7,14 @@ export default function Home(){
 
     const[datos,setDatos] = useState([]);
 
+
     let data;
     let temp, hum, humS, nivelAgua, bomba, day, month, year, time;
 
     const peticionGetDatos = () =>{
         data = "?table=datos";
         axios({
-            url: "http://192.168.0.9/api/index.php"+data,
+            url: "http://192.168.11.9/api/index.php"+data,
             method: 'get',
             headers: { },
         }).then((response) => {

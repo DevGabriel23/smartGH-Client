@@ -107,12 +107,12 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-    height: 45px;
+    height: 50px;
     line-height: 45px;
     width: 30%;
     color: ${colors.white};
     font-weight: bold;
-    font-size: 
+    font-size: ${fontSize.normal};
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -148,7 +148,7 @@ const TableContainer = styled.div`
     `}
 
     ${props => props.name === 'tableWrapper' && css`
-        max-height: 320px;
+        max-height: 720px;
         overflow-y: scroll;
         margin: 20px;
     `}
@@ -156,11 +156,11 @@ const TableContainer = styled.div`
     div::-webkit-scrollbar{  
         width: 10px;
         height: 10px;
-        background-color: ${colors.border};
+        background-color: ${colors.white};
     }
 
     div::-webkit-scrollbar-thumb {
-        background-color: ${colors.secondary};
+        background-color: ${colors.brown};
         border-radius: 50px;
     }
     
@@ -226,7 +226,9 @@ const ModalContainer = styled.div`
 
 const Title = styled.h1`
     grid-column: span 2;
+    font-weight: 800;
     color: ${props => props.color};
+
     @media(max-width: 800px){
         grid-column: span 1;
     }
@@ -234,6 +236,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.h3`
     grid-column: span 2;
+    color: ${props => props.color};
 
     @media(max-width: 800px){
         grid-column: span 1;

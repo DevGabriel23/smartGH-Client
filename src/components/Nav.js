@@ -1,18 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import "../App.css";
+import logo from "../elements/Logo.png"
 
-function Navbar() {
+function Navbar(){
     return (
-        <ul>
-            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/'><h2>Inicio</h2></NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/home'><h2>Inicio</h2></NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/login'><h2>Inicio Sesion </h2></NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/register'><h2>Registro </h2></NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/home/history'><h2>Historial</h2></NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/home/stats'><h2>Estadística</h2></NavLink>
-            
-        </ul>
-
+        <nav className='nav'>
+            <NavLink to="/"><img src={logo} className="logo"/></NavLink>
+            <NavLink className="text" to='/'>Inicio</NavLink>
+            <NavLink className="text" to='/home'>Dashboard</NavLink>
+            {/* <NavLink className="text" to='/login'>Iniciar Sesion</NavLink> */}
+            {/* <NavLink className="text" to='/register'>Registro</NavLink> */}
+            <NavLink className="text" to='/home/history'>Historial</NavLink>
+            <NavLink className="text" to='/home/stats'>Estadística</NavLink>
+        </nav>
     );
 }
 

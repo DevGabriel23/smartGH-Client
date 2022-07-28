@@ -1,7 +1,11 @@
+import axios from "axios"
+import { useState } from "react";
+
 export const getDatos = async () => {
-    data = "?table=datos";
+    const[datos, setDatos] = useState([])
+    let data = "?table=datos";
     axios({
-        url: "http://192.168.0.9/api/index.php" + data,
+        url: "http://192.168.11.9/api/index.php" + data,
         method: 'get',
         headers: {},
     }).then((response) => {
@@ -12,9 +16,10 @@ export const getDatos = async () => {
 }
 
 export const getRegado = async () => {
-    data = "?table=riego";
+    const[riegos, setRiegos] = useState([])
+    let data = "?table=riego";
         axios({
-            url: "http://192.168.0.9/api/index.php"+data,
+            url: "http://192.168.11.9/api/index.php"+data,
             method: 'get',
             headers: { },
         }).then((response) => {
